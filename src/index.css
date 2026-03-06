@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 187 100% 42%;
+    --primary-foreground: 222 47% 5%;
+
+    --secondary: 210 20% 93%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 187 100% 42%;
+
+    --radius: 0.75rem;
+
+    --gradient-start: 187 100% 42%;
+    --gradient-end: 262 83% 58%;
+  }
+
+  .dark {
+  --background: 222 47% 5%;
+  --foreground: 210 40% 98%;
+
+  --card: 222 40% 12%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 40% 12%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 187 100% 55%;
+  --primary-foreground: 222 47% 5%;
+
+  --secondary: 222 35% 18%;
+  --secondary-foreground: 210 40% 96%;
+
+  --muted: 222 30% 22%;
+  --muted-foreground: 215 20% 75%;
+
+  --accent: 262 83% 70%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 70% 45%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 222 25% 28%;
+  --input: 222 25% 28%;
+  --ring: 187 100% 55%;
+
+  --gradient-start: 187 100% 55%;
+  --gradient-end: 262 83% 70%;
+}
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .gradient-border {
+    @apply relative;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent))) border-box;
+    border: 1px solid transparent;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.5);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px -10px hsl(var(--accent) / 0.5);
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-foreground transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .skill-badge {
+    @apply px-4 py-2 rounded-full glass-card text-sm font-medium transition-all duration-300 hover:scale-105 hover:glow-primary;
+  }
+
+  .project-card {
+    @apply glass-card rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:glow-primary;
+  }
+
+  .timeline-dot {
+    @apply w-4 h-4 rounded-full bg-gradient-to-r from-primary to-accent glow-primary;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-primary-foreground bg-gradient-to-r from-primary to-accent transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold border border-border bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:text-primary hover:scale-105;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-muted-foreground transition-all duration-300 hover:text-foreground hover:bg-muted;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-lg max-w-2xl;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
