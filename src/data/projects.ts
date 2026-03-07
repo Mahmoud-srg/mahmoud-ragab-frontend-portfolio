@@ -54,7 +54,7 @@ export const projects: Project[] = [
     image: project4,
     technologies: ["React", "TypeScript", "TailwindCSS", "Responsive Design",],
     liveDemo: "https://example.com",
-    github: "https://github.com",
+    github: "https://github.com/Mahmoud-srg/mahmoud-ragab-frontend-portfolio.git",
     category: "react",
   },
 ];
