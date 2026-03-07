@@ -89,7 +89,7 @@ export const Hero = () => {
 
               {/* Floating badges */}
               <div className="absolute -top-4 -right-4 px-4 py-2 glass-card rounded-xl text-sm font-medium animate-bounce">
-                tow Years Exp
+                Two Years Exp
               </div>
               <div className="absolute -bottom-4 -left-4 px-4 py-2 glass-card rounded-xl text-sm font-medium animate-bounce" style={{ animationDelay: '0.5s' }}>
                 ITI Graduate
