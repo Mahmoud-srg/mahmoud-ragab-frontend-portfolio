@@ -53,7 +53,7 @@ export const projects: Project[] = [
     description: "Portfolio website built with React, featuring a clean UI, responsive design. sections for services and company information.",
     image: project4,
     technologies: ["React", "TypeScript", "TailwindCSS", "Responsive Design",],
-    liveDemo: "https://example.com",
+    liveDemo: "https://mahmoud-ragab-portfolio.vercel.app/",
     github: "https://github.com/Mahmoud-srg/mahmoud-ragab-frontend-portfolio.git",
     category: "react",
   },
