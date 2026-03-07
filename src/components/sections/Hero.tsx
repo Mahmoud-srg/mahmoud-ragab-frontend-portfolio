@@ -99,11 +99,13 @@ export const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block">
+        <a href="#about">
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block cursor-pointer">
           <div className="w-6 h-10 rounded-full border-2 border-muted-foreground flex justify-center pt-2">
             <div className="w-1 h-2 bg-muted-foreground rounded-full animate-pulse" />
           </div>
         </div>
+        </a>
       </div>
     </section>
   );
