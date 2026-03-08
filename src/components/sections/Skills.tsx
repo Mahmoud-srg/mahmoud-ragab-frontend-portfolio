@@ -32,7 +32,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="section-padding relative bg-muted/30">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in-down">
           <h2 className="section-title">
             My <span className="gradient-text">Skills</span>
           </h2>
@@ -46,7 +46,8 @@ export const Skills = () => {
             <div
               key={index}
               className="group glass-card rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 cursor-default"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              data-aos="zoom-in" 
+              data-aos-delay={`${index * 50}`}
             >
               <div className={`w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-r ${skill.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 <skill.icon className="w-7 h-7 text-white" />

@@ -27,7 +27,7 @@ export const About = () => {
   return (
     <section id="about" className="section-padding relative">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in-down">
           <h2 className="section-title">
             About <span className="gradient-text">Me</span>
           </h2>
@@ -38,7 +38,7 @@ export const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* About Text */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-right">
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a passionate <span className="text-foreground font-semibold">Front-End Developer</span> with 
               two years of experience in building modern, responsive web applications. I graduated from the 
@@ -65,12 +65,14 @@ export const About = () => {
           </div>
 
           {/* Highlights Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay="200">
             {highlights.map((item, index) => (
               <div
                 key={item.title}
                 className="glass-card rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 hover:glow-primary"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                // style={{ animationDelay: `${index * 0.1}s` }}
+                data-aos="zoom-in" 
+                data-aos-delay={`${index * 100}`}
               >
                 <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-primary to-accent flex items-center justify-center">
                   <item.icon className="w-6 h-6 text-primary-foreground" />

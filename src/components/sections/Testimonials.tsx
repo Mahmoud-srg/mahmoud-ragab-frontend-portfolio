@@ -5,7 +5,7 @@ export const Testimonials = () => {
   return (
     <section id="testimonials" className="section-padding relative">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in-down">
           <h2 className="section-title">
             What People <span className="gradient-text">Say</span>
           </h2>
@@ -19,7 +19,8 @@ export const Testimonials = () => {
             <div
               key={testimonial.id}
               className="glass-card rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 hover:glow-primary"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              data-aos="zoom-in" 
+              data-aos-delay={`${index * 100}`}
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden gradient-border p-0.5 shrink-0">

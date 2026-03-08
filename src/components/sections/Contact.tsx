@@ -78,7 +78,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="section-padding relative bg-muted/30">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in-down">
           <h2 className="section-title">
             Let's <span className="gradient-text">Connect</span>
           </h2>
@@ -89,7 +89,7 @@ export const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-8" data-aos="fade-right" data-aos-delay="100">
             <div>
               <h3 className="text-2xl font-bold font-display mb-4">
                 Get in Touch
@@ -129,7 +129,7 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8">
+          <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8" data-aos="fade-left" data-aos-delay="200">
             <h3 className="text-xl font-bold font-display mb-6">
               Send a Message
             </h3>

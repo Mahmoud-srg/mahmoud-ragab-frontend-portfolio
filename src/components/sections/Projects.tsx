@@ -19,7 +19,7 @@ export const Projects = () => {
   return (
     <section id="projects" className="section-padding relative">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in-down">
           <h2 className="section-title">
             Featured <span className="gradient-text">Projects</span>
           </h2>
@@ -51,7 +51,8 @@ export const Projects = () => {
             <article
               key={project.id}
               className="project-card group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              data-aos="zoom-in" 
+              data-aos-delay={`${index * 100}`}
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">

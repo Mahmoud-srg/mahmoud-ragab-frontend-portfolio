@@ -5,7 +5,7 @@ export const Experience = () => {
   return (
     <section id="experience" className="section-padding relative bg-muted/30">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in-down">
           <h2 className="section-title">
             Experience & <span className="gradient-text">Education</span>
           </h2>
@@ -24,10 +24,10 @@ export const Experience = () => {
             {experiences.map((exp, index) => (
               <div
                 key={exp.id}
-                className={`relative flex items-start gap-8 mb-12 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`relative flex items-start gap-8 mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
+                data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+                data-aos-delay={`${index * 100}`}
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-10">
@@ -38,18 +38,15 @@ export const Experience = () => {
 
                 {/* Content */}
                 <div
-                  className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] glass-card rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 ${
-                    index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto md:text-left'
-                  }`}
+                  className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] glass-card rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto md:text-left'
+                    }`}
                 >
-                  <div className={`flex items-center gap-3 mb-4 ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}>
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                      exp.type === 'work' 
-                        ? 'bg-primary/20 text-primary' 
-                        : 'bg-accent/20 text-accent'
+                  <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                     }`}>
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${exp.type === 'work'
+                        ? 'bg-primary/20 text-primary'
+                        : 'bg-accent/20 text-accent'
+                      }`}>
                       {exp.type === 'work' ? (
                         <Briefcase className="w-5 h-5" />
                       ) : (
