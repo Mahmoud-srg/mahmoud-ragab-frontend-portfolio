@@ -88,6 +88,10 @@
     font-family: 'Inter', sans-serif;
   }
 
+  html, body {
+  overflow-x: hidden;
+}
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
   }
@@ -118,7 +122,7 @@
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-padding {

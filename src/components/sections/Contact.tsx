@@ -102,22 +102,28 @@ export const Contact = () => {
             </div>
 
             <div className="space-y-4">
-              {contactInfo.map((item) => (
+              {contactInfo.map((item, index) => (
                 <a
                   key={item.label}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 glass-card rounded-xl hover:scale-[1.02] transition-all duration-300 group"
+                  className="flex flex-wrap items-center gap-4 p-4 glass-card rounded-xl hover:scale-[1.02] transition-all duration-300 group"
+                  data-aos="fade-in-right"
+                  data-aos-delay={index * 50}
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-primary to-accent flex items-center justify-center shrink-0">
                     <item.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <div className="flex-1">
+
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm text-muted-foreground">{item.label}</p>
-                    <p className="font-medium text-sm sm:text-base">{item.value}</p>
+                    <p className="font-medium text-sm sm:text-base break-all">
+                      {item.value}
+                    </p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+
+                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
                 </a>
               ))}
             </div>

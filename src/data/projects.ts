@@ -136,8 +136,8 @@ export const testimonials = [
   },
   {
     id: 3,
-    name: "Omar Khaled",
-    role: "Senior Developer",
+    name: "Saeed Singer",
+    role: "Backend Developer",
     content: "A dedicated developer who's always eager to learn. His problem-solving skills and work ethic are commendable.",
     avatar: "/user.png",
   },

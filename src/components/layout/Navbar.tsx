@@ -17,20 +17,12 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isDark, toggleTheme } = useTheme();
-
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
-  // handle link active
-  useEffect(() => {
-    const handleScroll = () => {
       const sections = navLinks
         .map((link) => document.querySelector(link.href))
         .filter(Boolean);
@@ -48,17 +40,19 @@ export const Navbar = () => {
       setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); 
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "glass-card py-3 max-w-[90%] md:max-w-[99%] lg:max-w-[90%] xl:max-w-[85%] mx-auto rounded-3xl md:rounded-full top-2"
-          : "py-5 bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
+          ${scrolled
+            ? "glass-card py-3 w-[90%] md:w-[95%] lg:w-[90%] mx-auto rounded-3xl md:rounded-full top-2"
+            : "py-5 bg-transparent w-full"
           }`}
       >
         <div className="section-container">
@@ -78,8 +72,8 @@ export const Navbar = () => {
                     key={link.name}
                     href={link.href}
                     className={`nav-link text-sm font-medium transition-colors ${activeSection === sectionId
-                      ? "text-primary border-b-2 border-primary"
-                      : "text-muted-foreground"
+                        ? "text-primary border-b-2 border-primary"
+                        : "text-muted-foreground"
                       }`}
                   >
                     {link.name}
@@ -88,6 +82,7 @@ export const Navbar = () => {
               })}
             </div>
 
+            {/* Desktop Right */}
             <div className="hidden md:flex items-center md:gap-2 lg:gap-4">
               <button
                 onClick={toggleTheme}
@@ -127,12 +122,10 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation OUTSIDE NAV */}
+      {/* Mobile Navigation */}
       {isOpen && (
         <div
-          className={`md:hidden fixed left-0 right-0 z-40 mt-2 top-[80px] ${scrolled
-            ? "max-w-[90%] mx-auto"
-            : ""
+          className={`md:hidden fixed left-0 right-0 z-40 mt-2 top-[80px] ${scrolled ? "w-[90%] mx-auto" : "w-full"
             }`}
         >
           <div className="glass-card rounded-2xl py-4 animate-fade-in">
@@ -145,14 +138,14 @@ export const Navbar = () => {
                     key={link.name}
                     href={link.href}
                     className={`py-3 px-4 rounded-xl hover:bg-muted transition-colors font-medium ${activeSection === sectionId
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                        ? "text-primary"
+                        : "text-muted-foreground"
                       }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
                   </a>
-                )
+                );
               })}
 
               <a
